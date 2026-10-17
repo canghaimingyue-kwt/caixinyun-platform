@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>才薪云 · 员工移动端</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/echarts.min.js"></script>
+<style>
+  body { background:#e9edf2; margin:0; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; }
+  .phone { max-width:430px; margin:24px auto; background:#f5f7fa; border-radius:28px; box-shadow:0 18px 50px rgba(0,0,0,.18); overflow:hidden; min-height:88vh; display:flex; flex-direction:column; }
+  .phone-bar { height:54px; background:linear-gradient(90deg,#07c060,#0e8a55); color:#fff; display:flex; align-items:center; justify-content:space-between; padding:0 18px; font-weight:600; }
+  .phone-bar a { color:#dffaef; font-size:13px; cursor:pointer; text-decoration:underline; }
+  .phone-body { flex:1; overflow:auto; }
+  #main .page { padding:14px; }
+  .phone-tabs { display:flex; background:#fff; border-top:1px solid #eef1f6; }
+  .ptab { flex:1; text-align:center; padding:9px 0 11px; font-size:11px; color:#8a94a6; cursor:pointer; }
+  .ptab .ico { font-size:20px; display:block; margin-bottom:2px; }
+  .ptab.active { color:#07c060; }
+  .s-card { background:#fff; border-radius:14px; padding:14px; margin-bottom:12px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+  .s-greet { font-size:18px; font-weight:700; }
+  .s-sub { font-size:12px; color:var(--text-3); margin-top:2px; }
+  .s-row { display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px dashed #eef1f6; font-size:13px; }
+  .s-row:last-child { border-bottom:none; }
+  .s-pay { background:linear-gradient(135deg,#07c060,#0e8a55); color:#fff; border-radius:14px; padding:16px; margin-bottom:12px; }
+  .s-pay .big { font-size:26px; font-weight:800; }
+  .s-btn { display:block; width:100%; background:#07c060; color:#fff; border:none; border-radius:10px; padding:11px; font-size:14px; margin-top:10px; cursor:pointer; }
+  .s-btn.ghost { background:#e9f9ef; color:#07c060; }
+  .s-input { width:100%; border:1px solid #e3e8ef; border-radius:10px; padding:10px; font-size:13px; margin:6px 0; box-sizing:border-box; }
+  .s-pill { display:inline-block; background:#e9f9ef; color:#07c060; border-radius:20px; padding:4px 12px; font-size:12px; margin:3px; }
+  .s-chat { background:#fff; border-radius:12px; padding:10px; margin-top:8px; font-size:13px; }
+  .s-chat .q { text-align:right; } .s-chat .q span { background:#07c060; color:#fff; border-radius:12px; padding:7px 11px; display:inline-block; }
+  .s-chat .a { text-align:left; margin-top:8px; } .s-chat .a span { background:#eef1f6; border-radius:12px; padding:7px 11px; display:inline-block; color:#334; }
+  .s-bar { height:8px; background:#eef1f6; border-radius:6px; overflow:hidden; margin-top:6px; }
+  .s-bar > i { display:block; height:100%; background:#07c060; }
+  .s-chip { display:inline-block; background:#e9f9ef; color:#07c060; border-radius:6px; padding:2px 8px; font-size:11px; }
+  .cal { background:#fff; border-radius:12px; padding:10px; margin-top:4px; }
+  .cal-h { display:flex; justify-content:space-between; align-items:center; font-size:14px; padding:2px 4px; }
+  .cal-h span { font-size:22px; cursor:pointer; color:#07c060; padding:0 12px; }
+  .cal-wk, .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; text-align:center; font-size:12px; }
+  .cal-wk { color:var(--text-3); margin:8px 0 4px; }
+  .cal-cell { padding:7px 0; border-radius:8px; font-size:12px; }
+  .cal-cell.empty { visibility:hidden; }
+  .cal-cell.ok { background:#e9f9ef; color:#07c060; }
+  .cal-cell.late { background:#fff3e5; color:#fa8c16; }
+  .cal-cell.rest { background:#f2f4f7; color:#9aa7b8; }
+  .cal-cell.future { color:#c4ccd6; }
+  .cal-cell.today { outline:2px solid #07c060; }
+  .cal-cell.sel { background:#07c060; color:#fff; }
+  .cal-cell.clk { cursor:pointer; }
+  .cal-time { margin-top:8px; font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="phone">
+    <div class="phone-bar"><span>☁ 才薪云 · 员工端</span><a onclick="slogout()">退出</a></div>
+    <div class="phone-body"><div id="main"></div></div>
+    <div class="phone-tabs" id="tabs">
+      <div class="ptab" data-t="home" onclick="go('home')"><span class="ico">🏠</span>首页</div>
+      <div class="ptab" data-t="pay" onclick="go('pay')"><span class="ico">💰</span>工资条</div>
+      <div class="ptab" data-t="att" onclick="go('att')"><span class="ico">🕒</span>考勤</div>
+      <div class="ptab" data-t="req" onclick="go('req')"><span class="ico">📝</span>请假</div>
+      <div class="ptab" data-t="train" onclick="go('train')"><span class="ico">🎓</span>培训</div>
+      <div class="ptab" data-t="me" onclick="go('me')"><span class="ico">👤</span>我的</div>
+    </div>
+  </div>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/staff-app.js"></script>
+</body>
+</html>

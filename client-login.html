@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>才薪云 · 甲方协同门户 - 登录</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body.login-body { background:linear-gradient(120deg,#0e8a55,#13a86a); }
+  .login-title { color:#0e8a55; }
+  .login-divider { background:#b7eb8f; }
+  .login-btn { background:#13a86a; }
+  .login-btn:hover { background:#0e8a55; }
+  .client-tag { display:inline-block; background:#e6f7f1; color:#0e8a55; border-radius:20px; padding:3px 12px; font-size:12px; margin-bottom:10px; }
+</style>
+</head>
+<body class="login-body">
+<div class="login-wrap">
+  <div class="login-left">
+    <div class="login-left-inner">
+      <p class="login-slogan-sm">甲方协同 · 透明履约</p>
+      <p class="login-slogan">才薪云甲方协同门户，向客户开放脱敏履约视图：实时掌握项目进度、人员到岗、工时合规与考核回执，数据双向回流、全程脱敏呈现。</p>
+      <div class="login-illustration">
+        <div class="illus-card">
+          <div class="illus-line w60"></div>
+          <div class="illus-line w80"></div>
+          <div class="illus-line w70"></div>
+          <div class="illus-thumb"></div>
+        </div>
+        <div class="illus-figure">
+          <div class="illus-head"></div>
+          <div class="illus-body"><span class="illus-badge">OK</span></div>
+          <div class="illus-legs"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="login-right">
+    <div class="login-card">
+      <span class="client-tag">🤝 甲方客户端（独立入口）</span>
+      <h1 class="login-title">甲方协同门户登录</h1>
+      <div class="login-divider"></div>
+      <form id="cForm" autocomplete="off">
+        <input class="login-input" id="cuser" type="text" placeholder="甲方账号 / 单位名称" value="甲铁路局">
+        <input class="login-input" id="cpass" type="password" placeholder="访问口令" value="client">
+        <button class="login-btn" type="submit">进 入 门 户</button>
+      </form>
+      <p style="font-size:12px;color:#9aa7b8;margin-top:14px">演示口令：client ｜ <a href="portal.html" style="color:#13a86a">返回门户总入口</a></p>
+    </div>
+    <p class="login-footer">本门户为对外独立端口，与管理端物理隔离，仅呈现脱敏履约数据</p>
+  </div>
+</div>
+<script>
+document.getElementById('cForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var u = document.getElementById('cuser').value || '甲方';
+  sessionStorage.setItem('cx_client', u);
+  location.href = 'client.html';
+});
+</script>
+</body>
+</html>

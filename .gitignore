@@ -1,0 +1,7 @@
+# 项目内部数据，不发布到公开仓库
+.codebuddy/
+
+# 系统/编辑器产物
+.DS_Store
+Thumbs.db
+*.log

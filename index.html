@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>才薪云智慧人力服务平台 - 中心管理端</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/echarts.min.js"></script>
+</head>
+<body>
+<div class="app active" id="app">
+  <div class="topbar">
+    <span class="brand">☁ 才薪云智慧人力服务平台</span>
+    <div class="top-menus" id="topMenus"></div>
+    <div class="top-right">
+      <span>🔔</span>
+      <div class="user" id="userChip"><span class="avatar" id="avatarTxt">高</span>&nbsp;<span id="roleName">企业高管</span> ▾</div>
+      <span onclick="logout()" style="cursor:pointer" title="退出登录">⏻</span>
+    </div>
+  </div>
+  <div class="layout">
+    <div class="sidebar" id="sidebar"></div>
+    <div class="main" id="main"></div>
+  </div>
+</div>
+<div class="modal-mask" id="modalMask" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalBox"></div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/app.js"></script>
+<script src="js/page-sd-overview.js"></script>
+<script src="js/page-sd-bid.js"></script>
+<script src="js/page-sd-health-client.js"></script>
+<script src="js/page-sd-ticket.js"></script>
+<script src="js/page-bi.js"></script>
+<script src="js/page-sys.js"></script>
+<script src="js/page-audit.js"></script>
+<script src="js/page-req.js"></script>
+<script>window.CX_BOOT && CX_BOOT();</script>
+<div style="position:fixed;bottom:8px;right:14px;font-size:11px;color:#9aa7b8">内部管理系统 · <a href="portal.html" style="color:#9aa7b8;text-decoration:underline">门户总入口</a></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>才薪云智慧人力服务平台 - 门户总入口</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { background:linear-gradient(135deg,#0b1f3a,#123a6b); }
+  .portal-wrap { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; padding:40px 20px; }
+  .portal-title { font-size:26px; font-weight:700; margin-bottom:6px; }
+  .portal-sub { color:#a9c2e0; margin-bottom:30px; font-size:14px; }
+  .portal-cards { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
+  .portal-card { width:280px; background:#fff; border-radius:16px; padding:26px 22px; color:#1a2b45; box-shadow:0 12px 40px rgba(0,0,0,.25); transition:.2s; cursor:pointer; }
+  .portal-card:hover { transform:translateY(-6px); }
+  .pc-ico { font-size:34px; }
+  .pc-name { font-size:18px; font-weight:700; margin:12px 0 8px; }
+  .pc-desc { font-size:13px; color:#5a6b7a; line-height:1.7; }
+  .pc-link { margin-top:14px; color:#1677ff; font-size:13px; font-weight:600; }
+  .portal-foot { margin-top:34px; font-size:12px; color:#7e9bc0; }
+</style>
+</head>
+<body>
+<div class="portal-wrap">
+  <div class="portal-title">才薪云智慧人力服务平台</div>
+  <div class="portal-sub">多端口协同 · 请选择您的入口</div>
+  <div class="portal-cards">
+    <div class="portal-card" onclick="location.href='login.html'">
+      <div class="pc-ico">🖥️</div>
+      <div class="pc-name">中心管理端（内部）</div>
+      <div class="pc-desc">面向企业高管、项目负责人、职能管理者（HR/财务/运营）。含经营看板、智慧决策、协同审批与操作审计。</div>
+      <div class="pc-link">内部账号登录 ›</div>
+    </div>
+    <div class="portal-card" onclick="location.href='staff-login.html'">
+      <div class="pc-ico">📱</div>
+      <div class="pc-name">员工移动端</div>
+      <div class="pc-desc">面向一线派遣员工：工资条、请假打卡、培训认证、AI 问答。微信小程序形态，与中心端共享数据底座。</div>
+      <div class="pc-link">微信扫码进入 ›</div>
+    </div>
+    <div class="portal-card" onclick="location.href='client-login.html'">
+      <div class="pc-ico">🤝</div>
+      <div class="pc-name">甲方协同门户（客户端）</div>
+      <div class="pc-desc">面向甲方客户：脱敏履约视图、项目进度、考核回执上传、人员到岗与合规看板。独立登录、对外脱敏。</div>
+      <div class="pc-link">客户端登录 ›</div>
+    </div>
+  </div>
+  <div class="portal-foot">© 才薪云 · 演示平台（数据为脱敏仿真）</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>才薪云 · 甲方协同门户</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/echarts.min.js"></script>
+<style>
+  :root { --primary:#13a86a; --primary-light:#e6f7f1; --primary-dark:#0e8a55; }
+  body { background:#f0f7f3; }
+  .client-bar { height:56px; background:linear-gradient(90deg,#0e8a55,#13a86a); color:#fff;
+    display:flex; align-items:center; justify-content:space-between; padding:0 22px; position:sticky; top:0; z-index:5; }
+  .client-bar .cb-brand { font-weight:700; font-size:16px; }
+  .client-bar .cb-user { font-size:13px; display:flex; align-items:center; gap:14px; }
+  .client-bar .cb-user a { color:#dff5ea; cursor:pointer; text-decoration:underline; }
+  .client-hero { background:#fff; border:1px solid #b7eb8f; border-radius:12px; padding:18px 20px; margin-bottom:16px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .ch-title { font-size:19px; font-weight:700; color:#0e8a55; }
+  .ch-sub { font-size:12.5px; color:#5a6b62; margin-top:4px; }
+  .ch-time { font-size:12px; color:#5a6b62; }
+  .main.client-main { padding:18px; }
+  .client-nav { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+  .cn-item { padding:8px 16px; border-radius:20px; background:#fff; border:1px solid #b7eb8f; color:#0e8a55; font-size:13px; cursor:pointer; }
+  .cn-item.active { background:#13a86a; color:#fff; border-color:#13a86a; }
+</style>
+</head>
+<body>
+  <div class="client-bar">
+    <div class="cb-brand">🤝 才薪云 · 甲方协同门户</div>
+    <div class="cb-user"><span id="cbName"></span><a onclick="clogout()">退出</a></div>
+  </div>
+  <div class="main client-main" id="main"></div>
+<script src="js/core.js"></script>
+<script src="js/client-app.js"></script>
+<script>document.getElementById('cbName').textContent = sessionStorage.getItem('cx_client') || '甲方';</script>
+</body>
+</html>
